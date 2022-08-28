@@ -47,9 +47,16 @@ sdk_mcu_path = os.path.join(sdk_path, "mik32")
 sdk_ldscripts_path = os.path.join(sdk_mcu_path, "ldscripts")
 sdk_runtime_path = os.path.join(sdk_mcu_path, "runtime")
 
-if not os.path.isfile(os.path.join(sdk_runtime_path, 'crt0', 'crt0.o')):
+
+if not os.path.isfile(os.path.join(sdk_runtime_path, 'build', 'core_startup.o')):
     env.BuildSources(
-        os.path.join(sdk_runtime_path, 'crt0'),
+        os.path.join(sdk_runtime_path, 'build'),
+        src_dir=sdk_runtime_path
+    )
+
+if not os.path.isfile(os.path.join(sdk_runtime_path, 'build', 'core_irq.o')):
+    env.BuildSources(
+        os.path.join(sdk_runtime_path, 'build'),
         src_dir=sdk_runtime_path
     )
 
@@ -72,7 +79,8 @@ env.AppendUnique(
     ],
     LINKFLAGS=[
         "-nostartfiles",
-        os.path.join(sdk_runtime_path, 'crt0', 'crt0.o'),
+        os.path.join(sdk_runtime_path, 'build', 'core_startup.o'),
+        os.path.join(sdk_runtime_path, 'build', 'core_irq.o'),
         '-v'
     ],
     LIBSOURCE_DIRS=[

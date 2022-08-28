@@ -8,9 +8,9 @@
     "license": "MIT",
     "repository": {
       "type": "git",
-      "url": "https://github.com/platformio/platform-myplatform.git"
+      "url": "https://github.com/Farbigoz/mikron-platform"
     },
-    "version": "0.1",
+    "version": "0.1.1",
 
     "frameworks": {
     },
@@ -19,7 +19,7 @@
       "sdk-mikron-npcprom": {
         "type": "sdk",
         "owner": "fabriziog",
-        "version": "0.1.2"
+        "version": "0.1.3"
       },
       "toolchain-riscv": {
         "type": "toolchain",
