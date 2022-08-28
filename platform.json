@@ -1,0 +1,35 @@
+{
+    "name": "mikron-npcprom",
+    "title": "MIKRON",
+    "description": "MIKRON mcu tools",
+    "homepage": "https://www.mikron.ru/",
+    "keywords": ["mikron", "npcprom", "risc-v", "mik32", "mik-32", "mcu32", "mcu-32", "amur"],
+
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/platformio/platform-myplatform.git"
+    },
+    "version": "0.1",
+
+    "frameworks": {
+    },
+
+    "packages": {
+      "sdk-mikron-npcprom": {
+        "type": "sdk",
+        "owner": "fabriziog",
+        "version": "0.1.2"
+      },
+      "toolchain-riscv": {
+        "type": "toolchain",
+        "owner": "platformio",
+        "version": "~1.80300.0"
+      },
+      "tool-openocd-riscv": {
+        "type": "uploader",
+        "owner": "platformio",
+        "version": "~2.1000.0"
+      }
+    }
+  }
